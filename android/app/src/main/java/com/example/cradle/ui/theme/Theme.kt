@@ -34,22 +34,22 @@ private val LightColors = lightColorScheme(
 )
 
 private val DarkColors = darkColorScheme(
-    primary = InkPinkDark,
-    onPrimary = Color(0xFF5C1033),
+    primary = Color(0xFFC2366F),
+    onPrimary = Color.White,
     primaryContainer = BabyPinkDark,
-    onPrimaryContainer = Color(0xFFFFD9E4),
+    onPrimaryContainer = Color.White,
     secondary = InkBlueDark,
     onSecondary = Color(0xFF0A2E47),
     secondaryContainer = BabyBlueDark,
-    onSecondaryContainer = Color(0xFFD1E8FF),
+    onSecondaryContainer = Color.White,
     tertiary = Color(0xFFCFBDFE),
     tertiaryContainer = Color(0xFF514275),
-    onTertiaryContainer = Color(0xFFE9DDFF),
+    onTertiaryContainer = Color.White,
     background = MistDark,
-    onBackground = Color(0xFFEDE0E4),
+    onBackground = Color.White,
     surface = MistDark,
-    onSurface = Color(0xFFEDE0E4),
-    onSurfaceVariant = Color(0xFFD5C2C9),
+    onSurface = Color.White,
+    onSurfaceVariant = Color(0xFFDCDDE3),
     surfaceContainerLowest = Color(0xFF0F141B),
     surfaceContainerLow = Color(0xFF1C2129),
     surfaceContainer = Color(0xFF20262E),
@@ -67,6 +67,7 @@ fun CradleTheme(
     MaterialExpressiveTheme(
         colorScheme = if (darkTheme) DarkColors else LightColors,
         motionScheme = MotionScheme.expressive(),
+        typography = CradleTypography,
         content = content,
     )
 }

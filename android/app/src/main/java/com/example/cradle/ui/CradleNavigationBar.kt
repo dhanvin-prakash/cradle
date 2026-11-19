@@ -6,12 +6,14 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ShortNavigationBar
 import androidx.compose.material3.ShortNavigationBarItem
+import androidx.compose.material3.ShortNavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import com.example.cradle.ui.theme.accentText
 
 /** Material 3 Expressive short navigation bar with an unread badge on Updates. */
 @Composable
@@ -45,6 +47,10 @@ fun CradleNavigationBar(
                     }
                 },
                 label = { Text(tab.title) },
+                colors = ShortNavigationBarItemDefaults.colors(
+                    selectedTextColorTopIconPosition = MaterialTheme.colorScheme.accentText,
+                    unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                ),
             )
         }
     }

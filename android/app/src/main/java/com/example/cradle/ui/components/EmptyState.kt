@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.cradle.ui.theme.Dimens
+import com.example.cradle.ui.theme.TitleFont
 
 @Composable
 fun EmptyState(
@@ -33,7 +34,7 @@ fun EmptyState(
             contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
             size = 96.dp,
         )
-        Text(title, style = MaterialTheme.typography.titleLargeEmphasized, textAlign = TextAlign.Center)
+        Text(title, style = MaterialTheme.typography.titleLargeEmphasized, fontFamily = TitleFont, textAlign = TextAlign.Center)
         Text(
             message,
             style = MaterialTheme.typography.bodyLarge,

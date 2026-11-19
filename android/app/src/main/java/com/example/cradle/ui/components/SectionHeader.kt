@@ -14,6 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import com.example.cradle.ui.theme.Dimens
+import com.example.cradle.ui.theme.accentText
 
 @Composable
 fun SectionHeader(
@@ -36,7 +37,7 @@ fun SectionHeader(
         Text(
             text = title,
             style = MaterialTheme.typography.titleLargeEmphasized,
-            color = MaterialTheme.colorScheme.secondary,
+            color = MaterialTheme.colorScheme.accentText,
         )
     }
 }

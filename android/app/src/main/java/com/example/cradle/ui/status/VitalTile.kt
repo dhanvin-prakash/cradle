@@ -19,6 +19,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import com.example.cradle.model.Vital
 import com.example.cradle.ui.theme.Dimens
+import com.example.cradle.ui.theme.accentText
 
 @Composable
 fun VitalTile(
@@ -53,7 +54,7 @@ fun VitalTile(
                 Text(
                     vital.kind.title,
                     style = MaterialTheme.typography.titleSmall,
-                    color = MaterialTheme.colorScheme.secondary,
+                    color = MaterialTheme.colorScheme.accentText,
                 )
             }
 

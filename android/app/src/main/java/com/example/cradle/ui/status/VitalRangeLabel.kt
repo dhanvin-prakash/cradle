@@ -13,12 +13,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.cradle.R
 import com.example.cradle.model.Vital
+import com.example.cradle.ui.theme.accentText
+import com.example.cradle.ui.theme.alertText
 
 /** Uses both an icon and words so the meaning never relies on colour alone. */
 @Composable
 fun VitalRangeLabel(vital: Vital) {
     val inRange = vital.isInTypicalRange
-    val color = if (inRange) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.primary
+    val colors = MaterialTheme.colorScheme
+    val iconColor = if (inRange) colors.secondary else colors.primary
+    val textColor = if (inRange) colors.accentText else colors.alertText
 
     Row(
         horizontalArrangement = Arrangement.spacedBy(6.dp),
@@ -27,13 +31,13 @@ fun VitalRangeLabel(vital: Vital) {
         Icon(
             painter = painterResource(if (inRange) R.drawable.ic_check_circle else R.drawable.ic_visibility),
             contentDescription = null,
-            tint = color,
+            tint = iconColor,
             modifier = Modifier.size(18.dp),
         )
         Text(
             if (inRange) "Typical range" else "Team is watching",
             style = MaterialTheme.typography.labelLarge,
-            color = color,
+            color = textColor,
         )
     }
 }

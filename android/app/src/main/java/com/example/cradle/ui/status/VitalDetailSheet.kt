@@ -21,6 +21,7 @@ import com.example.cradle.model.Vital
 import com.example.cradle.ui.components.LabeledRow
 import com.example.cradle.ui.components.SectionHeader
 import com.example.cradle.ui.theme.Dimens
+import com.example.cradle.ui.theme.TitleFont
 
 @Composable
 fun VitalDetailSheet(
@@ -41,6 +42,7 @@ fun VitalDetailSheet(
             Text(
                 kind.title,
                 style = MaterialTheme.typography.headlineMediumEmphasized,
+                fontFamily = TitleFont,
                 modifier = Modifier.semantics { heading() },
             )
 

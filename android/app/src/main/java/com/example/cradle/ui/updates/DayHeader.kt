@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import com.example.cradle.ui.components.dayHeader
+import com.example.cradle.ui.theme.accentText
 import java.time.LocalDate
 
 @Composable
@@ -14,7 +15,7 @@ fun DayHeader(day: LocalDate) {
     Text(
         text = day.dayHeader(),
         style = MaterialTheme.typography.titleMediumEmphasized,
-        color = MaterialTheme.colorScheme.secondary,
+        color = MaterialTheme.colorScheme.accentText,
         modifier = Modifier.semantics { heading() },
     )
 }
