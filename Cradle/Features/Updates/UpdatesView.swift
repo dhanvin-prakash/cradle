@@ -26,6 +26,7 @@ struct UpdatesView: View {
             .refreshable {
                 await store.refresh()
             }
+            .onAppear(perform: store.markUpdatesRead)
         }
     }
 

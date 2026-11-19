@@ -8,6 +8,17 @@ enum UpdateKind: String, CaseIterable, Hashable {
     case nurseNote
     case doctorRound
 
+    var title: String {
+        switch self {
+        case .feed: "Feed"
+        case .nappy: "Nappy"
+        case .weight: "Weight"
+        case .cuddle: "Cuddle"
+        case .nurseNote: "Nurse note"
+        case .doctorRound: "Doctor's round"
+        }
+    }
+
     var systemImage: String {
         switch self {
         case .feed: "drop.fill"

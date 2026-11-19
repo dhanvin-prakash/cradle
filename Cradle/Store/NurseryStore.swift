@@ -8,6 +8,7 @@ final class NurseryStore {
     private(set) var babies: [Baby]
     var selectedBabyID: Baby.ID?
     private(set) var isRefreshing = false
+    private(set) var unreadUpdateCount = 0
 
     @ObservationIgnored private let refreshDelay: Duration
 
@@ -33,6 +34,24 @@ final class NurseryStore {
         for index in babies.indices {
             babies[index].lastUpdated = now
         }
+    }
+
+    /// Publishes a staff update to a baby's parents, optionally changing the headline status.
+    func send(_ draft: UpdateDraft, to babyID: Baby.ID, now: Date = .now) {
+        guard draft.isReadyToSend, let index = babies.firstIndex(where: { $0.id == babyID }) else { return }
+
+        babies[index].updates.append(draft.makeUpdate(now: now))
+        babies[index].lastUpdated = now
+
+        if draft.changesStatus {
+            babies[index].status = draft.status
+        }
+
+        unreadUpdateCount += 1
+    }
+
+    func markUpdatesRead() {
+        unreadUpdateCount = 0
     }
 
     /// Updates matching `filter`, grouped by calendar day with the newest day and update first.
