@@ -1,0 +1,72 @@
+package com.example.cradle.ui.theme
+
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.MaterialExpressiveTheme
+import androidx.compose.material3.MotionScheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+
+private val LightColors = lightColorScheme(
+    primary = InkPinkLight,
+    onPrimary = Color.White,
+    primaryContainer = BabyPinkLight,
+    onPrimaryContainer = Color(0xFF5C1033),
+    secondary = InkBlueLight,
+    onSecondary = Color.White,
+    secondaryContainer = BabyBlueLight,
+    onSecondaryContainer = Color(0xFF0A2E47),
+    tertiary = Color(0xFF6A5A8E),
+    tertiaryContainer = Color(0xFFE6DDFF),
+    onTertiaryContainer = Color(0xFF241A45),
+    background = MistLight,
+    onBackground = Color(0xFF1F1A1D),
+    surface = MistLight,
+    onSurface = Color(0xFF1F1A1D),
+    onSurfaceVariant = Color(0xFF524349),
+    surfaceContainerLowest = Color.White,
+    surfaceContainerLow = Color(0xFFFFF0F5),
+    surfaceContainer = Color(0xFFFBE9F0),
+    surfaceContainerHigh = Color(0xFFF5E3EA),
+    surfaceContainerHighest = Color(0xFFEFDDE4),
+    outlineVariant = Color(0xFFD8C1C9),
+)
+
+private val DarkColors = darkColorScheme(
+    primary = InkPinkDark,
+    onPrimary = Color(0xFF5C1033),
+    primaryContainer = BabyPinkDark,
+    onPrimaryContainer = Color(0xFFFFD9E4),
+    secondary = InkBlueDark,
+    onSecondary = Color(0xFF0A2E47),
+    secondaryContainer = BabyBlueDark,
+    onSecondaryContainer = Color(0xFFD1E8FF),
+    tertiary = Color(0xFFCFBDFE),
+    tertiaryContainer = Color(0xFF514275),
+    onTertiaryContainer = Color(0xFFE9DDFF),
+    background = MistDark,
+    onBackground = Color(0xFFEDE0E4),
+    surface = MistDark,
+    onSurface = Color(0xFFEDE0E4),
+    onSurfaceVariant = Color(0xFFD5C2C9),
+    surfaceContainerLowest = Color(0xFF0F141B),
+    surfaceContainerLow = Color(0xFF1C2129),
+    surfaceContainer = Color(0xFF20262E),
+    surfaceContainerHigh = Color(0xFF2A3038),
+    surfaceContainerHighest = Color(0xFF353B43),
+    outlineVariant = Color(0xFF51434A),
+)
+
+/** Brand colours are used deliberately instead of dynamic colour so the app always feels like the hospital. */
+@Composable
+fun CradleTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit,
+) {
+    MaterialExpressiveTheme(
+        colorScheme = if (darkTheme) DarkColors else LightColors,
+        motionScheme = MotionScheme.expressive(),
+        content = content,
+    )
+}

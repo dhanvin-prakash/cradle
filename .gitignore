@@ -4,3 +4,10 @@ DerivedData/
 *.xcresult
 xcuserdata/
 Cradle.xcodeproj/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/.kotlin/
+*.iml

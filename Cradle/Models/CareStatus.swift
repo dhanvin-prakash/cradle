@@ -35,7 +35,7 @@ enum CareStatus: String, CaseIterable, Hashable {
 
     var systemImage: String {
         switch self {
-        case .stable: "checkmark.heart.fill"
+        case .stable: "heart.fill"
         case .sleeping: "moon.zzz.fill"
         case .feeding: "drop.fill"
         case .closelyMonitored: "eye.fill"

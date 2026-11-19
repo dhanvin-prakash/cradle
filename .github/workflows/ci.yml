@@ -1,9 +1,11 @@
-name: CI
+name: iOS
 
 on:
   push:
     branches: [main]
+    paths-ignore: ["android/**", ".github/workflows/android.yml", ".github/scripts/android-screenshots.sh"]
   pull_request:
+    paths-ignore: ["android/**", ".github/workflows/android.yml", ".github/scripts/android-screenshots.sh"]
   workflow_dispatch:
 
 concurrency:
