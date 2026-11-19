@@ -42,7 +42,10 @@ fun UpdateRow(
             .fillMaxWidth()
             .semantics(mergeDescendants = true) {},
         shape = MaterialTheme.shapes.extraLarge,
-        colors = CardDefaults.cardColors(containerColor = colors.surfaceContainerLowest.copy(alpha = 0.85f)),
+        colors = CardDefaults.cardColors(
+            containerColor = colors.surfaceContainerLowest.copy(alpha = 0.85f),
+            contentColor = colors.onSurface,
+        ),
     ) {
         Row(
             modifier = Modifier.padding(Dimens.CardPadding),

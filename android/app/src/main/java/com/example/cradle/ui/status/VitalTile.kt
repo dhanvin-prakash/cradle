@@ -35,6 +35,7 @@ fun VitalTile(
         shape = MaterialTheme.shapes.extraLarge,
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surfaceContainerLowest.copy(alpha = 0.85f),
+            contentColor = MaterialTheme.colorScheme.onSurface,
         ),
     ) {
         Column(
