@@ -18,6 +18,8 @@ struct UpdateFilterBar: View {
             }
         }
         .scrollIndicators(.hidden)
+        .scrollClipDisabled()
+        .scrollEdgeEffectHidden(true, for: .horizontal)
         .sensoryFeedback(.selection, trigger: selection)
     }
 

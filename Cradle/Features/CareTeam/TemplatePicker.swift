@@ -20,6 +20,7 @@ struct TemplatePicker: View {
             }
         }
         .scrollIndicators(.hidden)
+        .scrollEdgeEffectHidden(true, for: .horizontal)
         .contentMargins(.horizontal, Theme.cardPadding, for: .scrollContent)
         .listRowBackground(Color.clear)
         .listRowInsets(EdgeInsets())
