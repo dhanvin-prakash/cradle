@@ -40,6 +40,7 @@ fun TemplateRow(onApply: (UpdateTemplate) -> Unit) {
                     shape = MaterialTheme.shapes.large,
                     colors = AssistChipDefaults.assistChipColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerLowest.copy(alpha = 0.85f),
+                        labelColor = MaterialTheme.colorScheme.onSurface,
                         leadingIconContentColor = MaterialTheme.colorScheme.primary,
                     ),
                     modifier = Modifier.semantics {

@@ -24,7 +24,13 @@ for mode in light dark; do
     adb shell am force-stop "$PACKAGE"
     adb shell am start -W -n "$PACKAGE/.MainActivity" --es initialTab "$tab"
     sleep 6
-    adb exec-out screencap -p > "$OUT/${mode}-${tab}.png"
+    adb exec-out screencap -p > "$OUT/${mode}-${tab}-1.png"
+    # Scroll down twice so the whole screen is checked, not just the top.
+    for page in 2 3; do
+      adb shell input swipe 540 1900 540 700 400
+      sleep 2
+      adb exec-out screencap -p > "$OUT/${mode}-${tab}-${page}.png"
+    done
   done
 done
 
