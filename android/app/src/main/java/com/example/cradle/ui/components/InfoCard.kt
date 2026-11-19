@@ -30,7 +30,10 @@ fun InfoCard(
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = MaterialTheme.shapes.extraLarge,
-            colors = CardDefaults.cardColors(containerColor = containerColor),
+            colors = CardDefaults.cardColors(
+                containerColor = containerColor,
+                contentColor = MaterialTheme.colorScheme.onSurface,
+            ),
         ) {
             Column(
                 modifier = Modifier.padding(Dimens.CardPadding),
