@@ -34,6 +34,8 @@ import androidx.compose.ui.unit.dp
 import com.example.cradle.R
 import com.example.cradle.model.Baby
 import com.example.cradle.model.UpdateDraft
+import com.example.cradle.ui.AccountState
+import com.example.cradle.ui.components.AccountMenu
 import com.example.cradle.ui.components.CradleScreenScaffold
 import com.example.cradle.ui.theme.Dimens
 import kotlinx.coroutines.launch
@@ -43,6 +45,7 @@ import kotlinx.coroutines.launch
 fun CareTeamScreen(
     babies: List<Baby>,
     defaultRecipientId: String?,
+    account: AccountState,
     onSend: (UpdateDraft, String) -> Boolean,
     modifier: Modifier = Modifier,
 ) {
@@ -69,9 +72,10 @@ fun CareTeamScreen(
     }
 
     CradleScreenScaffold(
-        title = "Care Team",
-        subtitle = "Send an update to parents",
+        title = "Send Update",
+        subtitle = "Care Team · to parents",
         modifier = modifier,
+        actions = { AccountMenu(account) },
         snackbarHostState = snackbarHostState,
     ) { innerPadding ->
         Column(

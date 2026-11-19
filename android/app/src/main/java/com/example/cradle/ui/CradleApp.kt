@@ -23,10 +23,24 @@ import com.example.cradle.ui.visit.VisitScreen
 @Composable
 fun CradleApp(
     initialTab: AppTab,
+    initialRole: AppRole,
+    onRoleChange: (AppRole) -> Unit,
     viewModel: NurseryViewModel = viewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    var selectedTab by rememberSaveable { mutableStateOf(initialTab) }
+    var role by rememberSaveable { mutableStateOf(initialRole) }
+    var selectedTab by rememberSaveable {
+        mutableStateOf(if (initialTab in initialRole.tabs) initialTab else initialRole.defaultTab)
+    }
+
+    val account = AccountState(role = role) { newRole ->
+        role = newRole
+        if (selectedTab !in newRole.tabs) selectedTab = newRole.defaultTab
+        onRoleChange(newRole)
+    }
+
+    // Only parents get the unread badge; staff wrote the updates themselves.
+    val badgeCount = if (role == AppRole.Parent) state.unreadUpdateCount else 0
 
     LaunchedEffect(selectedTab, state.unreadUpdateCount) {
         if (selectedTab == AppTab.Updates && state.unreadUpdateCount > 0) {
@@ -40,8 +54,9 @@ fun CradleApp(
             contentColor = MaterialTheme.colorScheme.onBackground,
             bottomBar = {
                 CradleNavigationBar(
+                    tabs = role.tabs,
                     selectedTab = selectedTab,
-                    unreadUpdateCount = state.unreadUpdateCount,
+                    unreadUpdateCount = badgeCount,
                     onSelect = { selectedTab = it },
                 )
             },
@@ -57,23 +72,27 @@ fun CradleApp(
                 AppTab.Status -> StatusScreen(
                     state = state,
                     babySwitcher = babySwitcher,
+                    account = account,
                     onRefresh = viewModel::refresh,
                     modifier = modifier,
                 )
                 AppTab.Updates -> UpdatesScreen(
                     state = state,
                     babySwitcher = babySwitcher,
+                    account = account,
                     onRefresh = viewModel::refresh,
                     modifier = modifier,
                 )
                 AppTab.Visit -> VisitScreen(
                     baby = state.selectedBaby,
                     babySwitcher = babySwitcher,
+                    account = account,
                     modifier = modifier,
                 )
                 AppTab.CareTeam -> CareTeamScreen(
                     babies = state.babies,
                     defaultRecipientId = state.selectedBaby?.id,
+                    account = account,
                     onSend = viewModel::send,
                     modifier = modifier,
                 )

@@ -1,22 +1,19 @@
 import SwiftUI
 
-/// Soft baby blue and pink mesh that Liquid Glass surfaces refract.
+/// Calm vertical wash: pink at the top, white through the middle, a gentle blue at the bottom.
 struct NurseryBackground: View {
     var body: some View {
-        MeshGradient(
-            width: 3,
-            height: 3,
-            points: [
-                [0, 0], [0.5, 0], [1, 0],
-                [0, 0.5], [0.55, 0.45], [1, 0.5],
-                [0, 1], [0.5, 1], [1, 1]
+        LinearGradient(
+            stops: [
+                .init(color: Theme.babyPink, location: 0),
+                .init(color: Theme.babyPink.opacity(0.7), location: 0.25),
+                .init(color: Theme.mist, location: 0.6),
+                .init(color: Theme.babyBlue.opacity(0.6), location: 1)
             ],
-            colors: [
-                Theme.babyPink, Theme.mist, Theme.babyBlue,
-                Theme.babyBlue, Theme.babyPink, Theme.mist,
-                Theme.mist, Theme.babyBlue, Theme.babyPink
-            ]
+            startPoint: .top,
+            endPoint: .bottom
         )
+        .background(Theme.mist)
         .ignoresSafeArea()
         .accessibilityHidden(true)
     }

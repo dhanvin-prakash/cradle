@@ -11,6 +11,6 @@ internal val InkPinkLight = Color(0xFFB8336A)
 
 internal val BabyBlueDark = Color(0xFF2C5A7A)
 internal val BabyPinkDark = Color(0xFF7A2E4F)
-internal val MistDark = Color(0xFF141A22)
+internal val MistDark = Color(0xFF1B1218)
 internal val InkBlueDark = Color(0xFF9FD3F7)
 internal val InkPinkDark = Color(0xFFF7A8C8)

@@ -102,7 +102,8 @@ jobs:
             xcrun simctl ui "$UDID" appearance "$appearance"
             for tab in status updates visit careTeam; do
               xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2>/dev/null || true
-              xcrun simctl launch "$UDID" "$BUNDLE_ID" -initialTab "$tab"
+              role=parent; [ "$tab" = careTeam ] && role=careTeam
+              xcrun simctl launch "$UDID" "$BUNDLE_ID" -initialTab "$tab" -appRole "$role"
               sleep 6
               xcrun simctl io "$UDID" screenshot "screenshots/${appearance}-${tab}.png"
             done

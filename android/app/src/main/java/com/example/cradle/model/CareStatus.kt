@@ -26,7 +26,7 @@ enum class CareStatus(
         title = "Having a feed",
         message = "Your baby is feeding right now. You'll see how it went in Updates soon.",
         icon = R.drawable.ic_water_drop,
-        isCalm = false,
+        isCalm = true,
     ),
     CloselyMonitored(
         title = "Being closely watched",

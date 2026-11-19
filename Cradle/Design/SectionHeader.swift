@@ -8,7 +8,7 @@ struct SectionHeader: View {
         Label(title, systemImage: systemImage)
             .font(.title3)
             .bold()
-            .foregroundStyle(Theme.inkBlue)
+            .foregroundStyle(Theme.inkPink)
             .frame(maxWidth: .infinity, alignment: .leading)
             .accessibilityAddTraits(.isHeader)
     }

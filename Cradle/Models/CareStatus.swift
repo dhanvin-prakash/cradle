@@ -45,8 +45,8 @@ enum CareStatus: String, CaseIterable, Hashable {
 
     var tint: Color {
         switch self {
-        case .stable, .readyForHome, .sleeping: Theme.babyBlue
-        case .feeding, .closelyMonitored: Theme.babyPink
+        case .stable, .readyForHome, .sleeping, .feeding: Theme.babyPink
+        case .closelyMonitored: Theme.babyBlue
         }
     }
 }

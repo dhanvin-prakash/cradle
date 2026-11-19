@@ -12,7 +12,9 @@ import com.example.cradle.R
 import com.example.cradle.data.NurseryState
 import com.example.cradle.data.NurseryStore
 import com.example.cradle.model.UpdateFilter
+import com.example.cradle.ui.AccountState
 import com.example.cradle.ui.BabySwitcherState
+import com.example.cradle.ui.components.AccountMenu
 import com.example.cradle.ui.components.BabySwitcher
 import com.example.cradle.ui.components.CradleScreenScaffold
 import com.example.cradle.ui.components.EmptyState
@@ -22,6 +24,7 @@ import com.example.cradle.ui.components.RefreshableList
 fun UpdatesScreen(
     state: NurseryState,
     babySwitcher: BabySwitcherState,
+    account: AccountState,
     onRefresh: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -34,7 +37,10 @@ fun UpdatesScreen(
     CradleScreenScaffold(
         title = baby?.let { "${it.givenName}'s Updates" } ?: "Updates",
         modifier = modifier,
-        actions = { BabySwitcher(babySwitcher) },
+        actions = {
+            BabySwitcher(babySwitcher)
+            AccountMenu(account)
+        },
     ) { innerPadding ->
         RefreshableList(
             isRefreshing = state.isRefreshing,

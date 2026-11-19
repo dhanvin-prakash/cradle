@@ -7,7 +7,7 @@ struct VisitingHoursCard: View {
         VStack(alignment: .leading, spacing: Theme.itemSpacing) {
             SectionHeader(title: "Visiting Hours", systemImage: "clock.fill")
 
-            GlassCard(tint: Theme.babyBlue) {
+            GlassCard(tint: Theme.babyPink) {
                 VStack(alignment: .leading, spacing: Theme.itemSpacing) {
                     Text(ward.name)
                         .font(.headline)

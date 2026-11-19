@@ -19,7 +19,7 @@ struct BabyHeaderCard: View {
 
                     Label("\(baby.ward.shortName) · Bed \(baby.bed)", systemImage: "bed.double.fill")
                         .font(.subheadline)
-                        .foregroundStyle(Theme.inkBlue)
+                        .foregroundStyle(Theme.inkPink)
                 }
             }
         }

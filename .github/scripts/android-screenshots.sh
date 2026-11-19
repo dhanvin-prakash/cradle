@@ -22,7 +22,8 @@ for mode in light dark; do
   sleep 2
   for tab in status updates visit careteam; do
     adb shell am force-stop "$PACKAGE"
-    adb shell am start -W -n "$PACKAGE/.MainActivity" --es initialTab "$tab"
+    role=parent; [ "$tab" = careteam ] && role=careteam
+    adb shell am start -W -n "$PACKAGE/.MainActivity" --es initialTab "$tab" --es role "$role"
     sleep 6
     adb exec-out screencap -p > "$OUT/${mode}-${tab}-1.png"
     # Scroll down twice so the whole screen is checked, not just the top.

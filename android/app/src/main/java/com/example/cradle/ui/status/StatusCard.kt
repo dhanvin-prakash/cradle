@@ -41,9 +41,10 @@ fun StatusCard(
     lastUpdated: Instant,
 ) {
     val colors = MaterialTheme.colorScheme
-    val container = if (status.isCalm) colors.secondaryContainer else colors.primaryContainer
-    val onContainer = if (status.isCalm) colors.onSecondaryContainer else colors.onPrimaryContainer
-    val accent = if (status.isCalm) colors.secondary else colors.primary
+    // Pink for everyday states; the calm blue is reserved for "being closely watched".
+    val container = if (status.isCalm) colors.primaryContainer else colors.secondaryContainer
+    val onContainer = if (status.isCalm) colors.onPrimaryContainer else colors.onSecondaryContainer
+    val accent = if (status.isCalm) colors.primary else colors.secondary
 
     // A slowly turning "sunny" shape: a gentle sign the status is live.
     // Compose honours the system "remove animations" setting automatically.

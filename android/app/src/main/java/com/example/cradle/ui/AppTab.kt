@@ -10,7 +10,7 @@ enum class AppTab(
     Status("Today", R.drawable.ic_monitor_heart),
     Updates("Updates", R.drawable.ic_clinical_notes),
     Visit("Visit", R.drawable.ic_family_restroom),
-    CareTeam("Care Team", R.drawable.ic_stethoscope);
+    CareTeam("Send Update", R.drawable.ic_edit_square);
 
     companion object {
         fun fromName(name: String?): AppTab =

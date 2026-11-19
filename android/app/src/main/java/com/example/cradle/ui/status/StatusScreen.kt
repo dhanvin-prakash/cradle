@@ -10,7 +10,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.example.cradle.data.NurseryState
 import com.example.cradle.model.Vital
+import com.example.cradle.ui.AccountState
 import com.example.cradle.ui.BabySwitcherState
+import com.example.cradle.ui.components.AccountMenu
 import com.example.cradle.ui.components.BabySwitcher
 import com.example.cradle.ui.components.CradleScreenScaffold
 import com.example.cradle.ui.components.EmptyState
@@ -22,6 +24,7 @@ import com.example.cradle.R
 fun StatusScreen(
     state: NurseryState,
     babySwitcher: BabySwitcherState,
+    account: AccountState,
     onRefresh: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -35,6 +38,7 @@ fun StatusScreen(
         actions = {
             BabySwitcher(babySwitcher)
             RefreshButton(isRefreshing = state.isRefreshing, onRefresh = onRefresh)
+            AccountMenu(account)
         },
     ) { innerPadding ->
         if (baby == null) {

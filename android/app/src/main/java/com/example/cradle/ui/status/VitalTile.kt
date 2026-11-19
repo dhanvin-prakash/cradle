@@ -49,7 +49,7 @@ fun VitalTile(
                 Icon(
                     painter = painterResource(vital.kind.icon),
                     contentDescription = null,
-                    tint = MaterialTheme.colorScheme.secondary,
+                    tint = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.size(20.dp),
                 )
                 Text(

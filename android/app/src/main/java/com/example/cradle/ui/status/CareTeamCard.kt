@@ -23,7 +23,7 @@ fun CareTeamCard(baby: Baby) {
     InfoCard(
         title = "Care Team",
         icon = R.drawable.ic_group,
-        containerColor = MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.7f),
+        containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.6f),
     ) {
         LabeledRow(R.drawable.ic_medical_services, "Nurse today", baby.nurse)
         LabeledRow(R.drawable.ic_stethoscope, "Doctor", "Dr ${baby.doctor}")

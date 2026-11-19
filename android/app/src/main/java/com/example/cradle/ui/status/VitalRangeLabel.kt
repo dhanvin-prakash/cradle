@@ -13,7 +13,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.cradle.R
 import com.example.cradle.model.Vital
-import com.example.cradle.ui.theme.accentText
+import com.example.cradle.ui.theme.calmText
 import com.example.cradle.ui.theme.alertText
 
 /** Uses both an icon and words so the meaning never relies on colour alone. */
@@ -22,7 +22,7 @@ fun VitalRangeLabel(vital: Vital) {
     val inRange = vital.isInTypicalRange
     val colors = MaterialTheme.colorScheme
     val iconColor = if (inRange) colors.secondary else colors.primary
-    val textColor = if (inRange) colors.accentText else colors.alertText
+    val textColor = if (inRange) colors.calmText else colors.alertText
 
     Row(
         horizontalArrangement = Arrangement.spacedBy(6.dp),

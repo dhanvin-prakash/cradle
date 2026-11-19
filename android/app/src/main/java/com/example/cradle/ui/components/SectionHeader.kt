@@ -32,7 +32,7 @@ fun SectionHeader(
         Icon(
             painter = painterResource(icon),
             contentDescription = null,
-            tint = MaterialTheme.colorScheme.secondary,
+            tint = MaterialTheme.colorScheme.primary,
         )
         Text(
             text = title,

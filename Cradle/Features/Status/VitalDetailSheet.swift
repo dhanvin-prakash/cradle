@@ -9,7 +9,7 @@ struct VitalDetailSheet: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: Theme.sectionSpacing) {
-                    GlassCard(tint: Theme.babyBlue) {
+                    GlassCard(tint: Theme.babyPink) {
                         VStack(alignment: .leading, spacing: Theme.itemSpacing) {
                             VitalValueText(vital: vital, font: .largeTitle)
                             VitalRangeLabel(vital: vital)

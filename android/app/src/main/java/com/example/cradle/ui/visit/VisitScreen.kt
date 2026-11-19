@@ -12,7 +12,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import com.example.cradle.model.Baby
+import com.example.cradle.ui.AccountState
 import com.example.cradle.ui.BabySwitcherState
+import com.example.cradle.ui.components.AccountMenu
 import com.example.cradle.ui.components.BabySwitcher
 import com.example.cradle.ui.components.CradleScreenScaffold
 import com.example.cradle.ui.theme.Dimens
@@ -21,13 +23,17 @@ import com.example.cradle.ui.theme.Dimens
 fun VisitScreen(
     baby: Baby?,
     babySwitcher: BabySwitcherState,
+    account: AccountState,
     modifier: Modifier = Modifier,
 ) {
     CradleScreenScaffold(
         title = "Visit",
         subtitle = baby?.ward?.displayName,
         modifier = modifier,
-        actions = { BabySwitcher(babySwitcher) },
+        actions = {
+            BabySwitcher(babySwitcher)
+            AccountMenu(account)
+        },
     ) { innerPadding ->
         LazyColumn(
             modifier = Modifier

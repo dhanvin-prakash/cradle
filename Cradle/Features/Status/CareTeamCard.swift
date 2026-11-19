@@ -7,7 +7,7 @@ struct CareTeamCard: View {
         VStack(alignment: .leading, spacing: Theme.itemSpacing) {
             SectionHeader(title: "Care Team", systemImage: "person.2.fill")
 
-            GlassCard(tint: Theme.babyBlue) {
+            GlassCard(tint: Theme.babyPink) {
                 VStack(alignment: .leading, spacing: Theme.itemSpacing) {
                     LabeledContent {
                         Text(baby.nurse, format: .name(style: .medium))

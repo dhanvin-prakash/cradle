@@ -13,7 +13,7 @@ fun VisitingHoursCard(ward: Ward) {
     InfoCard(
         title = "Visiting Hours",
         icon = R.drawable.ic_schedule,
-        containerColor = MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.7f),
+        containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.6f),
     ) {
         Text(ward.displayName, style = MaterialTheme.typography.titleMediumEmphasized)
         LabeledRow(R.drawable.ic_favorite, "Parents", ward.parentHours)

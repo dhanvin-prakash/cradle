@@ -2,7 +2,6 @@ package com.example.cradle.ui.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LoadingIndicator
 import androidx.compose.runtime.Composable
@@ -18,7 +17,7 @@ fun RefreshButton(
     isRefreshing: Boolean,
     onRefresh: () -> Unit,
 ) {
-    FilledTonalIconButton(onClick = onRefresh, enabled = !isRefreshing) {
+    PinkTonalIconButton(onClick = onRefresh, enabled = !isRefreshing) {
         Box(contentAlignment = Alignment.Center) {
             if (isRefreshing) {
                 LoadingIndicator(modifier = Modifier.size(28.dp))

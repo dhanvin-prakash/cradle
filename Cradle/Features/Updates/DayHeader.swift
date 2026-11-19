@@ -14,7 +14,7 @@ struct DayHeader: View {
             }
         }
         .font(.headline)
-        .foregroundStyle(Theme.inkBlue)
+        .foregroundStyle(Theme.inkPink)
         .accessibilityAddTraits(.isHeader)
     }
 }

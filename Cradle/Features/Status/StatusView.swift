@@ -34,6 +34,10 @@ struct StatusView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     RefreshButton()
                 }
+
+                ToolbarItem(placement: .topBarTrailing) {
+                    AccountMenu()
+                }
             }
             .refreshable {
                 await store.refresh()

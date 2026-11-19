@@ -8,24 +8,20 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 
-/** Soft baby pink → mist → baby blue wash behind every screen. */
+/** Calm vertical wash: pink at the top, white through the middle, a gentle blue at the bottom. */
 @Composable
 fun NurseryBackground(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit,
 ) {
     val colors = MaterialTheme.colorScheme
-    val brush = Brush.linearGradient(
-        colors = listOf(
-            colors.primaryContainer.copy(alpha = 0.75f),
-            colors.background,
-            colors.secondaryContainer.copy(alpha = 0.75f),
-        ),
-        start = Offset.Zero,
-        end = Offset.Infinite,
+    val brush = Brush.verticalGradient(
+        0f to colors.primaryContainer,
+        0.25f to colors.primaryContainer.copy(alpha = 0.7f),
+        0.6f to colors.background,
+        1f to colors.secondaryContainer.copy(alpha = 0.6f),
     )
 
     Box(

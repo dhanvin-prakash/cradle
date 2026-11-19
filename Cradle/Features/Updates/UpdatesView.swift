@@ -22,6 +22,10 @@ struct UpdatesView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     BabySwitcher()
                 }
+
+                ToolbarItem(placement: .topBarTrailing) {
+                    AccountMenu()
+                }
             }
             .refreshable {
                 await store.refresh()

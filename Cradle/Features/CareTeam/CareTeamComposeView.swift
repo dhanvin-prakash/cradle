@@ -42,8 +42,13 @@ struct CareTeamComposeView: View {
             }
             .scrollContentBackground(.hidden)
             .background { NurseryBackground() }
-            .navigationTitle("Care Team")
+            .navigationTitle("Send Update")
+            .navigationSubtitle("Care Team")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    AccountMenu()
+                }
+
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Send", systemImage: "paperplane.fill", action: send)
                         .disabled(canSend == false)

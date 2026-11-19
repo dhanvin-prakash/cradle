@@ -11,6 +11,6 @@ struct TypicalRangeText: View {
         Text("\(lower) to \(upper) \(kind.unit)")
             .font(.title3)
             .bold()
-            .foregroundStyle(Theme.inkBlue)
+            .foregroundStyle(Theme.inkPink)
     }
 }

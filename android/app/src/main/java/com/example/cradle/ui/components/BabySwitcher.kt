@@ -3,7 +3,6 @@ package com.example.cradle.ui.components
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,7 +22,7 @@ fun BabySwitcher(state: BabySwitcherState) {
     var expanded by remember { mutableStateOf(false) }
 
     Box {
-        FilledTonalIconButton(onClick = { expanded = true }) {
+        PinkTonalIconButton(onClick = { expanded = true }) {
             Icon(painter = painterResource(R.drawable.ic_group), contentDescription = "Switch baby")
         }
 

@@ -9,7 +9,7 @@ struct VitalTile: View {
             VStack(alignment: .leading, spacing: 6) {
                 Label(vital.kind.title, systemImage: vital.kind.systemImage)
                     .font(.subheadline)
-                    .foregroundStyle(Theme.inkBlue)
+                    .foregroundStyle(Theme.inkPink)
 
                 VitalValueText(vital: vital, font: .title)
 

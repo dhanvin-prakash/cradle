@@ -27,6 +27,10 @@ struct VisitView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     BabySwitcher()
                 }
+
+                ToolbarItem(placement: .topBarTrailing) {
+                    AccountMenu()
+                }
             }
         }
     }

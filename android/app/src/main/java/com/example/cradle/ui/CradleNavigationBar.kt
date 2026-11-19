@@ -18,12 +18,13 @@ import com.example.cradle.ui.theme.accentText
 /** Material 3 Expressive short navigation bar with an unread badge on Updates. */
 @Composable
 fun CradleNavigationBar(
+    tabs: List<AppTab>,
     selectedTab: AppTab,
     unreadUpdateCount: Int,
     onSelect: (AppTab) -> Unit,
 ) {
     ShortNavigationBar(containerColor = MaterialTheme.colorScheme.surfaceContainer) {
-        AppTab.entries.forEach { tab ->
+        tabs.forEach { tab ->
             val badgeCount = if (tab == AppTab.Updates) unreadUpdateCount else 0
 
             ShortNavigationBarItem(
@@ -48,7 +49,9 @@ fun CradleNavigationBar(
                 },
                 label = { Text(tab.title) },
                 colors = ShortNavigationBarItemDefaults.colors(
+                    selectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
                     selectedTextColorTopIconPosition = MaterialTheme.colorScheme.accentText,
+                    selectedIndicatorColor = MaterialTheme.colorScheme.primaryContainer,
                     unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
                 ),
             )
